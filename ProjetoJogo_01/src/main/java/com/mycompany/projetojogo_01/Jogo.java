@@ -5,9 +5,24 @@ import java.util.Scanner;
 
 public class Jogo {
     public static void main(String[] args) throws InterruptedException {
-        Guerreiro g = new Guerreiro("Rosevaldo");
-        Zumbi z = new Zumbi("Conam");
-        Arqueiro l = new Arqueiro("Legolas");
+        Guerreiro g = null;
+		try {
+			g = new Guerreiro("Rosevaldo");
+		} catch (Exception e) {
+			System.err.println( "Erro! Detalhe: " + e.getMessage() );
+		}
+        Zumbi z = null;
+		try {
+			z = new Zumbi("Conam");
+		} catch (Exception e) {
+			System.err.println( "Erro! Detalhe: " + e.getMessage() );
+		}
+        Arqueiro l = null;
+		try {
+			l = new Arqueiro("Legolas");
+		} catch (Exception e) {
+			System.err.println( "Erro! Detalhe: " + e.getMessage() );
+		}
         
         Scanner sc = new Scanner(System.in);
              
@@ -31,9 +46,9 @@ public class Jogo {
 	            Thread.sleep(3000);
 	        } // fim do while
 	        System.out.println("###################################");
-	        if(z.getVida() > 0 && z.getVida() == 0) {
+	        if(g.getVida() > 0 && z.getVida() == 0) {
 	            System.out.println("Guerreiro " + z.getNome() + " venceu!");
-	        } else if(z.getVida() == 0 && z.getVida() > 0) {
+	        } else if(g.getVida() == 0 && z.getVida() > 0) {
 	            System.out.println("Zumbi " + z.getNome() + " venceu!");
 	        } else {
 	            System.out.println("PARTIDA EMPATADA!");

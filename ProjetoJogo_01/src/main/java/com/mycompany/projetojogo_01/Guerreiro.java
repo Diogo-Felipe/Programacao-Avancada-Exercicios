@@ -7,7 +7,7 @@ public class Guerreiro extends Personagem implements IInterjeicao {
     private final double MIN_ARMADURA = 0.5;
     private final double MAX_ARMADURA = 4.5;
 
-    public Guerreiro(String nome) {
+    public Guerreiro(String nome) throws Exception {
         super(nome);
     }
     
@@ -16,7 +16,7 @@ public class Guerreiro extends Personagem implements IInterjeicao {
         return super.atacar(MIN_DANO, MAX_DANO); 
     }
 
-    public void defender(double dano) {
+    public void defender(double dano){
         this.defesa();
         super.defender(dano, MIN_ARMADURA, MAX_ARMADURA);
     }
